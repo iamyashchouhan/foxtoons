@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0x71628812372fF80c67b2ec9FA8107307364AaAd3",
+  "SCAN_LINK": "https://polygonscan.com/address/0x71628812372fF80c67b2ec9FA8107307364AaAd3",
+  "NETWORK": {
+    "NAME": "Polygon",
+    "SYMBOL": "Matic",
+    "ID": 137
+  },
+  "NFT_NAME": "Foxtoons Club",
+  "SYMBOL": "FTC",
+  "MAX_SUPPLY": 3333,
+  "WEI_COST": 22000000000000000000,
+  "DISPLAY_COST": 22,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/foxtoons-club",
+  "SHOW_BACKGROUND": true
+}
