@@ -11,6 +11,43 @@
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
+<style type="text/css">
+	li {
+  display: inline-block;
+  font-size: 1em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 .5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+  
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+  
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+</style>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
 
 	<!-- Preloader -->
@@ -79,6 +116,16 @@
 								<div class="spce"></div>
 								<div class="spce"></div>
 								<div class="spce"></div>
+								<h5>Public Sales Start in :</h5>
+
+								<div id="countdown">
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
 
 								<div class="row">
 
@@ -124,7 +171,7 @@
 				<div class="section-text grad-yellow text-center  wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
 					
 					<h3>About</h3>
-					<h5>Foxtoons Club is a collection of programmatically generated NFTs on the blockchain. The 1st generation consists of 10,000 (+1) randomly assembled Foxtoons, picked from a pool of over 500,000 possible outcomes. Foxtoons Club come with a unique variation of bodies, faces, and hats. Each Boodle is randomly generated & provably unique.</h5>
+					<h5>Foxtoons Club is a collection of programmatically generated NFTs on the blockchain. The 1st generation consists of 3333 randomly assembled Foxtoons, picked from a pool of over 500,000 possible outcomes. Foxtoons Club come with a unique variation of bodies, faces, and hats. Each Boodle is randomly generated & provably unique.</h5>
 				</div>
 				<div class="items row">
 					<div class="text-center col-feat shad-item">
@@ -165,7 +212,7 @@
 					<h3>Why should I get a Foxtoons?</h3>
 					<h6>Besides bragging rights, you will be able to grow and build the community with us. 10% of all sale proceeds will be automatically sent to a community safe. This will be returned to our holders in the form of contests, raffles, and more. Your Foxtoons will give you a voice in the community, and will allow you to help steer the direction of the project.</h6>
 					<div class="spce"></div>
-					<a class="btn grdnt-yellow" href="#"><span>Mint Now</span></a>
+					<a class="btn grdnt-yellow" href="mint/"><span>Mint Now</span></a>
 				</div>
 			</div>
 		</div>
@@ -381,15 +428,15 @@ Learn more about Metamask and how easy it is to use here</p>
 									</div>
 
 									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingThree">
+										<div class="panel-heading" role="tab" id="headingThree4">
 											<h4 class="panel-title">
-												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree4" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 													<i class="more-less glyphicon glyphicon-plus"></i>
 													How can i learn more?
 												</a>
 											</h4>
 										</div>
-										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div id="collapseThree4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree4">
 											<div class="panel-body">
 												<p>Come hang out with us in Discord, we are always available to answer your questions, and hear your ideas.</p>
 											</div>
@@ -397,15 +444,15 @@ Learn more about Metamask and how easy it is to use here</p>
 									</div>
 
 									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingThree">
+										<div class="panel-heading" role="tab" id="headingThree5">
 											<h4 class="panel-title">
-												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree5" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 													<i class="more-less glyphicon glyphicon-plus"></i>
 													What can i do with my Foxtoons Club?
 												</a>
 											</h4>
 										</div>
-										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div id="collapseThree5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree5">
 											<div class="panel-body">
 												<p>You are free to do whatever you want with your NFT under a non-exclusive license.</p>
 											</div>
@@ -477,6 +524,51 @@ Learn more about Metamask and how easy it is to use here</p>
 	<!-- script -->
 	<script src="js/vendor.bundle.js"></script>
 	<script src="js/script.js"></script>
+	<script type="text/javascript">
+		(function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  //I'm adding this section so I don't have to keep updating this pen every year :-)
+  //remove this if you don't need it
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy,
+      dayMonth = "12/12/",
+      birthday = dayMonth + yyyy;
+  
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
+  }
+  //end
+  
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+	</script>
 
 </body>
 </html>
